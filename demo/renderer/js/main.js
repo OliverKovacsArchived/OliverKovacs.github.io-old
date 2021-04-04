@@ -36,7 +36,7 @@ window.onload = () => {
 
     alert("Rendering Engine Demo\n" +
     "Use WASD and your mouse to control the main cube. Press F to spawn new Polygons.\n" + 
-    "Running this on a potato might result in it not beeing smooth. If you have GPU turn on Hardware accaleration for the best results.")
+    "Deprecated in favor of github.com/dx81/engine-xd. Try: oliverkovacs.github.io/demo/xd/engine-xd/")
 
     let engine = new Engine();
     engine.loop(Date.now());

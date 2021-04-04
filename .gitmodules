@@ -1,0 +1,3 @@
+[submodule "demo/xd"]
+	path = demo/xd
+	url = https://github.com/dx81/engine-xd-demos/
