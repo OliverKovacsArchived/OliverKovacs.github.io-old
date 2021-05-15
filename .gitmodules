@@ -2,5 +2,5 @@
 	path = demo/xd
 	url = https://github.com/dx81/engine-xd-demos/
 [submodule "demo/mandelbrot"]
-	path = ./demo/mandelbrot
+	path = demo/mandelbrot
 	url = https://github.com/OliverKovacs/mandelbrot-webgl
