@@ -30,4 +30,4 @@ export default [
         "text": "chrome-xd",
         "url": "https://github.com/dx81/chrome-xd"
     },
-]; // .map(element => { return { ...element, ...{ svg: "github.svg" } }; });
+]; // .map(element => { return { ...element, ...{ image: "github.svg" } }; });

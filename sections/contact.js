@@ -1,27 +1,27 @@
 export default [
     {
         "title": "GitHub",
-        "svg": "github.svg",
+        "image": "github.svg",
         "url": "https://github.com/OliverKovacs",
     },
     {
         "title": "Twitter",
-        "svg": "twitter.svg",
+        "image": "twitter.svg",
         "url": "https://twitter.com/oliverkovacsdev",
     },
     {
         "title": "Medium",
-        "svg": "medium.svg",
+        "image": "medium.svg",
         "url": "https://oliverkovacs.medium.com/",
     },
     {
         "title": "Email",
-        "svg": "gmail.svg",
+        "image": "gmail.svg",
         "url": "mailto:oliver.kovacs.dev@gmail.com",
     },
     {
         "title": "Spotify",
-        "svg": "spotify.svg",
+        "image": "spotify.svg",
         "url": "https://open.spotify.com/user/oliverkovacs",
     },
 ];

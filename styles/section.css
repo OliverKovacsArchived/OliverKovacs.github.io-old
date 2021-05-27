@@ -8,11 +8,7 @@
     margin-left: 20px;
     font-size: 20px;
     font-weight: bold;
-    color: var(--blue500p);
-}
-
-.section .section-title:hover {
-    color: var(--blue500l);
+    color: var(--primary);
 }
 
 .section .section-cards {
@@ -23,62 +19,78 @@
 }
 
 .section .card {
-    width: var(--card_w);
-    height: var(--card_h);
+    width: var(--card_width);
+    height: var(--card_height);
     margin: var(--card_margin);
-    border-radius: var(--card_r);
+    border-radius: var(--card_radius);
     overflow-wrap: anywhere;
 }
 
-.section .projects-card {
-    width: var(--card_ww);
-    padding: var(--card_padding);
-    background-color: var(--greyl);
-}
-
-.section .projects-card:hover {
-    background-color: var(--bg);
-}
-
-.section .demos-card {
-    width: var(--card_ww);
-    padding: var(--card_padding);
-    background-color: var(--greyl);
-}
-
-.section .demos-card:hover {
-    background-color: var(--bg);
-}
-
 .section .card .card-image {
-    width: var(--card_s);
-    height: var(--card_s);
-    border-radius: var(--card_r);
+    width: var(--card_img_size);
+    border-radius: var(--card_radius);
 }
 
 .section .card .text {
     margin: 0;
     font-size: 14px;
+    padding-left: var(--card_text_horizontal_padding);
+    padding-right: var(--card_text_horizontal_padding);
 }
 
-.section .card .card-title {
+.section .card .text .card-title {
     padding: 0;
     margin: 0;
-    margin-left: 2px;
-    margin-right: 2px;
+
+    margin-left: 0px;
+    margin-right: 0px;
 
     font-weight: medium;
-    color: var(--blue500p);
+    color: var(--secondary);
 }
 
-.section .card .card-title:hover {
-    color: var(--blue500l);
-}
-
-.section .card .card-text {
+.section .card .text .card-text {
     padding: 0;
     margin: 0;
-    margin-left: 2px;
-    margin-right: 2px;
     color: var(--white);
+}
+
+.section .card:hover a .text .card-title {
+    color: var(--primary);
+}
+
+
+
+.section .projects-card {
+    width: var(--card_ww);
+    padding: var(--card_padding);
+    background-color: var(--bg);
+}
+
+.section .projects-card:hover {
+    background-color: var(--bgl);
+}
+
+.section .projects-card:hover .text .card-title {
+    color: var(--primary);
+}
+
+.section .demos-card {
+    width: var(--card_ww);
+    padding: var(--card_padding);
+    background-color: var(--bg);
+}
+
+.section .demos-card:hover {
+    background-color: var(--bgl);
+}
+
+.section .demos-card:hover .text .card-title {
+    color: var(--primary);
+}
+
+
+
+.section .music-card {
+    width: 130px;
 }

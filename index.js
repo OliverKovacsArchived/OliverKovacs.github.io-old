@@ -1,12 +1,15 @@
 import sections from "./sections/sections.js";
-import WebGLShaderRenderer from "./webgl.js";
-import Vector from "./vector.js";
+
+import Mandelbrot from "./mandelbrot.js";
+import xd from "./engine_xd.js";
+import rgb from "./rgb.js";
+import pfp from "./pfp.js";
 
 const _ = undefined;
 
-let resolution;
-let position = [ 0.5, 0 ];
-let zoom = 0.8;
+const rbg_button = document.querySelector("#rgb");
+
+let start;
 
 const def = {
     type: "div",
@@ -40,7 +43,7 @@ const div = (_class, id, children = []) => {
     }
 }
 
-const createCard = (id, {title = "", text = "", image, svg, url}) => {
+const createCard = (id, {title = "", text = "", image, url}) => {
 
     let img_child;
     if (image) {
@@ -52,30 +55,22 @@ const createCard = (id, {title = "", text = "", image, svg, url}) => {
             }
         };
     }
-    if (svg) {
-        img_child = {
-            type: "object",
-            attributes: {
-                class: "card-image",
-                type: "image/svg+xml",
-                data: svg,
-            }
-        };
-    }
+
+    let text_div = div("text", _, [
+        p("card-title", title),
+        p("card-text", text),
+    ]);
+
+    let a = {
+        type: "a",
+        attributes: url ? { href: url } : {},
+        children: [ text_div ],
+    };
 
     let card = generateElement(
         div(`card ${id}-card`, _, [
             img_child,
-            {
-                type: "a",
-                attributes: url ? { href: url } : {},
-                children: [
-                    div("card-text", _, [
-                        p("card-title", title),
-                        p("card-text", text),
-                    ]),
-                ],
-            },
+            url ? a : text_div,
         ]),
     );
     return card;
@@ -95,32 +90,23 @@ const createSection = ({ name, id }) => {
 };
 
 const loadSection = async section => {
-    let json = await (await import(`./sections/${section.id}.js`)).default;
+    let json;
+    try {
+        json = await (await import(`./sections/${section.id}.js`)).default;
+    }
+    catch(error) {
+        console.warn(`Failed to generate section ${section.id}:\n${error}`);
+        return;
+    }
     let target = document.getElementById(`${section.id}-cards`)
     if (section.urls === "relative") {
-        if (json[0].image) {
-            json.forEach(element => element.image = `./sections/${section.id}/${element.image}`);
-        }
-        if (json[0].svg) {
-            json.forEach(element => element.svg = `./sections/${section.id}/${element.svg}`);
-        }
+        json.filter(element => element.image).forEach(element => element.image = `./sections/${section.id}/${element.image}`);
     }
     json.forEach(element => target.appendChild(createCard(section.id, element)));
 };
 
-const wheel = canvas => event => {
-    event.preventDefault();
-    const rectangle = canvas.getBoundingClientRect();
-    const speed = -0.003;
-    const nzoom = zoom * (1 + event.deltaY * speed);
-    const mouse = [ event.clientX - rectangle.left, event.clientY - rectangle.top ];
-    let uv = Vector.scalar(Vector.subtract(Vector.scalar(mouse, 2), resolution), 1 / resolution[1]);
-    position = Vector.add(position, Vector.scalar(uv, (zoom - nzoom) / (zoom * nzoom)));
-    zoom = nzoom;
-};
-
 window.onload = async () => {
-    let start = Date.now();
+
     const time = "Sections loaded in";
     console.time(time);
     sections.forEach(createSection);
@@ -128,23 +114,11 @@ window.onload = async () => {
     console.timeEnd(time);
 
     let width = document.getElementById("sections").offsetWidth;
-    resolution = [ width, Math.ceil(width / 2) ];
-    let renderer = new WebGLShaderRenderer("mandelbrot", resolution);
-    renderer.programInfo.uniforms = [
-        "resolution",
-        "position",
-        "zoom",
-        "time",
-    ];
-    await renderer.setShader("/shaders/fragment.glsl");
+    let resolution = [ width, Math.ceil(width / 2) ];
 
-    renderer.callback = (gl, shaderProgram) => {
-        gl.uniform2fv(shaderProgram.uniforms.resolution, resolution);
-        gl.uniform2fv(shaderProgram.uniforms.position, position);
-        gl.uniform1f(shaderProgram.uniforms.zoom, zoom);
-        gl.uniform1f(shaderProgram.uniforms.time, Date.now() - start);
-    };
-
-    renderer.canvas.onwheel = wheel(renderer.canvas);
-    renderer.start();
+    start = Date.now();
+    pfp("#2196f3");
+    Mandelbrot(resolution);
+    xd(resolution);
+    rbg_button.onclick = rgb;
 };

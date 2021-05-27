@@ -1,38 +1,38 @@
 export default [
     {
         "title": "VS Code",
-        "svg": "vscode.svg",
+        "image": "vscode.svg",
     },
     {
         "title": "Node.js",
-        "svg": "node.svg",
+        "image": "node.svg",
     },
     {
         "title": "npm",
-        "svg": "npm.svg",
+        "image": "npm.svg",
     },
     {
         "title": "Electron",
-        "svg": "electron.svg",
+        "image": "electron.svg",
     },
     {
         "title": "React",
-        "svg": "reactjs.svg",
+        "image": "reactjs.svg",
     },
     {
         "title": "React Native",
-        "svg": "reactts.svg",
+        "image": "reactts.svg",
     },
     {
         "title": "Docker",
-        "svg": "docker.svg",
+        "image": "docker.svg",
     },
     {
         "title": "Git",
-        "svg": "git.svg",
+        "image": "git.svg",
     },
     {
         "title": "GitHub",
-        "svg": "github.svg",
+        "image": "github.svg",
     },
 ];

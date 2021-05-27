@@ -8,37 +8,33 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: var(--bg);
+    background-color: var(--bgl);
     font-size: 16x;
     font-family: 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue';
-    color: #7CDCFE
+    color: #7CDCFE;
 }
 
 header {
     display: flex;
     align-items: center;
-    color: var(--blue500p);
-    background-color: var(--greyl);
-    border-radius: var(--card_r);
+    color: var(--primary);
+    background-color: var(--bg);
+    border-radius: var(--paper_radius);
 }
 
 footer {
-    height: 100px;
-    color: var(--blue500p);
+    height: 120px;
+    color: var(--primary);
     display: grid;
     justify-content: center;
     place-items: center;
-    background-color: var(--greyl);
-    border-radius: var(--card_r);
+    background-color: var(--bg);
+    border-radius: var(--paper_radius);
 }
 
 object {
     width: 16px;
     height: 16px;
-}
-
-header h1:hover {
-    color: var(--blue500l);
 }
 
 li {
@@ -51,25 +47,28 @@ a {
 }
 
 a:hover {
-    color: var(--blue500l);
+    color: var(--secondary);
 }
 
 .paper {
-    width: 920px;
+    width: var(--paper_width);
     height: auto;
     margin: auto;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: var(--paper_margin_top);
+    margin-bottom: var(--paper_margin_bottom);
     padding: 0;
-    background-color: var(--greyd);
-    border-radius: var(--card_r);
+    background-color: var(--bgd);
+    border-radius: var(--paper_radius);
+}
+
+.pixelated {
+    image-rendering: pixelated;
 }
 
 #pfp {
     width: 100px;
     height: 100px;
     margin: 50px;
-    image-rendering: pixelated
 }
 
 #mandelbrot {

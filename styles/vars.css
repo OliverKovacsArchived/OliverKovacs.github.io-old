@@ -1,0 +1,43 @@
+:root {
+    /* colors */
+    --blue500p: #2196f3;
+    --blue500l: #6ec5ff;
+    --blue500d: #0068bf;
+    --greyd: #212121;
+    --greyp: #333333;
+    --greyl: #424242;
+    --white: #ffffff;
+
+    --radius: 5px;
+    --paper_vertical_margin: 100px;
+}
+
+:root {
+    /* card */
+    --card_radius: var(--radius);
+    --card_width: 80px;
+    --card_height: auto;
+    --card_margin: 10px;
+    --card_padding: 10Px;
+    --card_img_size: 100%;
+    --card_text_horizontal_margin: 2px;
+    --card_ww: 185px;
+}
+
+:root {
+    /* paper */
+    --paper_radius: var(--radius);
+    --paper_width: 920px;
+    --paper_margin_top: var(--paper_vertical_margin);
+    --paper_margin_bottom: var(--paper_vertical_margin);
+}
+
+:root {
+    /* theme */
+    --bg: var(--greyp);
+    --bgl: var(--greyl);
+    --bgd: var(--greyd);
+    --primary: var(--blue500p);
+    --secondary: var(--blue500l);
+    --card_bg: var(--greyl);
+}

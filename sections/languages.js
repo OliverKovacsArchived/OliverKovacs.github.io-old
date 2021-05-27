@@ -1,22 +1,22 @@
 export default [
     {
         "title": "JavaScript",
-        "svg": "javascript.svg",
+        "image": "javascript.svg",
     },
     {
         "title": "Python",
-        "svg": "python.svg",
+        "image": "python.svg",
     },
     {
         "title": "C++",
-        "svg": "cpp.svg",
+        "image": "cpp.svg",
     },
     {
         "title": "HTML5",
-        "svg": "html.svg",
+        "image": "html.svg",
     },
     {
         "title": "CSS3",
-        "svg": "css.svg",
+        "image": "css.svg",
     },
 ];
