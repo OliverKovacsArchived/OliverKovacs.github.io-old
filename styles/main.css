@@ -23,7 +23,7 @@ header {
 }
 
 footer {
-    height: 140px;
+    height: 120px;
     color: var(--primary);
     display: grid;
     justify-content: center;
