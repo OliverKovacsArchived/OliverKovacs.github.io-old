@@ -16,8 +16,8 @@ export default async res => {
         },
     }));
 
-    let scale = 100;
-    let dimensions = 7;
+    let scale = 80;
+    let dimensions = 4;
     let axes = (dimensions * (dimensions - 1)) / 2;
 
     await engine.addEntity(new Engine.Entity({

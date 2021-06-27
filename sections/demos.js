@@ -25,6 +25,11 @@ export default [
         "url": "https://oliverkovacs.github.io/demo/mandelbrot/",
     },
     {
+        "title": "xdgl",
+        "text": "xdgl",
+        "url": "https://oliverkovacs.github.io/demo/xdgl/"
+    },
+    {
         "title": "jsfps",
         "text": "jsfps",
         "url": "https://oliverkovacs.github.io/demo/jsfps/html/",
