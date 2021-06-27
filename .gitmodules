@@ -4,3 +4,6 @@
 [submodule "demo/mandelbrot"]
 	path = demo/mandelbrot
 	url = https://github.com/OliverKovacs/mandelbrot-webgl
+[submodule "demo/xdgl"]
+	path = demo/xdgl
+	url = https://github.com/OliverKovacs/xdgl
