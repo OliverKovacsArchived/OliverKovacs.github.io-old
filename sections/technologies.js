@@ -24,12 +24,12 @@ export default [
         "image": "reactts.svg",
     },
     {
-        "title": "OpenGL",
-        "image": "opengl.svg",
-    },
-    {
         "title": "WebGL",
         "image": "webgl.svg",
+    },
+    {
+        "title": "Vulkan",
+        "image": "vulkan.svg"
     },
     {
         "title": "Docker",
