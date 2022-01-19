@@ -4,12 +4,12 @@ export default [
         "image": "javascript.svg",
     },
     {
-        "title": "Python",
-        "image": "python.svg",
-    },
-    {
         "title": "C++",
         "image": "cpp.svg",
+    },
+    {
+        "title": "Rust",
+        "image": "rust.svg",
     },
     {
         "title": "HTML5",
