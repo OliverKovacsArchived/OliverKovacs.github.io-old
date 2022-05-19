@@ -7,3 +7,6 @@
 [submodule "demo/xdgl"]
 	path = demo/xdgl
 	url = https://github.com/OliverKovacs/xdgl
+[submodule "demo/lorenz"]
+	path = demo/lorenz
+	url = https://github.com/OliverKovacs/lorenz-webgl
